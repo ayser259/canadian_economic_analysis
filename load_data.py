@@ -59,3 +59,27 @@ def load_normalized_data():
     df.columns = data.columns
     df.index = data.index
     return df
+
+def load_normalized_selected_data():
+    n_df = load_normalized_data()
+    columns = [
+    'GDP',
+    'electricity -Total generation',
+    'wages -Compensation of employees',
+    'wages -Manufacturing',
+    'wages -Information and cultural industries'
+        ]
+    s_df = n_df[columns]
+    return s_df
+
+def load_selected_data():
+    s_data = load_data()
+    columns = [
+        'GDP',
+        'electricity -Total generation',
+        'wages -Compensation of employees',
+        'wages -Manufacturing',
+        'wages -Information and cultural industries'
+            ]
+    s_data = s_data[columns]
+    return s_data
